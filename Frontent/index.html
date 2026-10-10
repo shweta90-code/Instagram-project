@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instagram</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN / REGISTER ================= -->
+
+<section id="authSection" class=."auth-section">
+
+    <div id="loginBox" class="auth-box">
+
+        <h1 class="instagram-logo">Instagram</h1>
+
+        <h2>Login</h2>
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email"
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+        >
+
+        <button id="loginBtn">Log in</button>
+
+        <p id="loginMessage" class="message"></p>
+
+        <div class="or-line">
+            <span></span>
+            <b>OR</b>
+            <span></span>
+        </div>
+
+        <p class="switch-auth">
+            Don't have an account?
+            <button
+                type="button"
+                id="showRegisterBtn"
+                class="text-btn"
+            >
+                Sign up
+            </button>
+        </p>
+
+    </div>
+
+
+    <div
+        id="registerBox"
+        class="auth-box"
+        style="display:none;"
+    >
+
+        <h1 class="instagram-logo">Instagram</h1>
+
+        <h2>Create Account</h2>
+
+        <input
+            type="text"
+            id="registerName"
+            placeholder="Full Name"
+        >
+
+        <input
+            type="text"
+            id="registerUsername"
+            placeholder="Username"
+        >
+
+        <input
+            type="email"
+            id="registerEmail"
+            placeholder="Email"
+        >
+
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+        >
+
+        <input
+            type="text"
+            id="registerPhone"
+            placeholder="Phone"
+        >
+
+        <button id="registerBtn">
+            Sign up
+        </button>
+
+        <p id="registerMessage" class="message"></p>
+
+        <p class="switch-auth">
+            Already have an account?
+            <button
+                type="button"
+                id="showLoginBtn"
+                class="text-btn"
+            >
+                Log in
+            </button>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN APP ================= -->
+
+<section
+    id="appSection"
+    class="app-section"
+    style="display:none;"
+>
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+        Instagram
+    </div>
+
+
+    <nav>
+
+        <!-- HOME -->
+        <button
+            class="nav-item"
+            data-page="home"
+        >
+            <span class="material-symbols-outlined">
+                home
+            </span>
+
+            <span>
+                Home
+            </span>
+        </button>
+
+
+        <!-- SEARCH -->
+        <button
+            class="nav-item"
+            data-page="search"
+        >
+            <span class="material-symbols-outlined">
+                search
+            </span>
+
+            <span>
+                Search
+            </span>
+        </button>
+
+
+        <!-- EXPLORE -->
+        <button
+            class="nav-item"
+            data-page="explore"
+        >
+            <span class="material-symbols-outlined">
+                explore
+            </span>
+
+            <span>
+                Explore
+            </span>
+        </button>
+
+
+        <!-- REELS -->
+        <button
+            class="nav-item"
+            data-page="reels"
+        >
+            <span class="material-symbols-outlined">
+                movie
+            </span>
+
+            <span>
+                Reels
+            </span>
+        </button>
+
+
+        <!-- MESSAGES -->
+        <button
+            class="nav-item"
+            data-page="messages"
+        >
+            <span class="material-symbols-outlined">
+                chat
+            </span>
+
+            <span>
+                Messages
+            </span>
+        </button>
+
+
+        <!-- NOTIFICATIONS -->
+        <button
+            class="nav-item"
+            data-page="notifications"
+        >
+            <span class="material-symbols-outlined">
+                favorite
+            </span>
+
+            <span>
+                Notifications
+            </span>
+        </button>
+
+
+        <!-- CREATE -->
+        <button
+            class="nav-item"
+            data-page="create"
+        >
+            <span class="material-symbols-outlined">
+                add_box
+            </span>
+
+            <span>
+                Create
+            </span>
+        </button>
+
+
+        <!-- PROFILE -->
+        <button
+            class="nav-item"
+            data-page="profile"
+        >
+            <span class="material-symbols-outlined">
+                account_circle
+            </span>
+
+            <span>
+                Profile
+            </span>
+        </button>
+
+
+        <!-- SAVED -->
+        <button
+            class="nav-item"
+            data-page="saved"
+        >
+            <span class="material-symbols-outlined">
+                bookmark
+            </span>
+
+            <span>
+                Saved
+            </span>
+        </button>
+
+
+        <!-- LOGOUT -->
+        <button
+            class="nav-item logout-item"
+            id="logoutBtn"
+        >
+            <span class="material-symbols-outlined">
+                logout
+            </span>
+
+            <span>
+                Logout
+            </span>
+        </button>
+
+    </nav>
+
+</aside>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="main-content">
+
+
+<!-- ================= HOME ================= -->
+
+<section
+    id="homePage"
+    class="page"
+>
+
+
+    <div class="home-layout">
+
+
+        <!-- HOME FEED -->
+
+        <div class="home-main">
+
+
+            <!-- STORIES -->
+
+            <!-- STORIES -->
+
+<div class="stories-box">
+
+    <div class="add-story" onclick="openStoryPicker()">
+        <div class="add-story-circle">
+            +
+        </div>
+        <span>Add Story</span>
+    </div>
+
+    <div
+        id="storiesList"
+        class="stories-list"
+    ></div>
+
+</div>
+
+<input
+    type="file"
+    id="storyFileInput"
+    accept="image/*"
+    style="display: none;"
+    onchange="uploadStoryImage(event)"
+>
+
+
+            <!-- POSTS -->
+
+            <div
+                id="postsContainer"
+                class="posts-container"
+            >
+
+                <p class="loading">
+                    Loading posts...
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- RIGHT SIDEBAR -->
+
+        <aside class="home-right">
+
+
+            <!-- CURRENT USER -->
+
+            <div
+                id="profileShortcut"
+                class="home-profile"
+            >
+
+                <img
+                    id="homeProfileImage"
+                    src=""
+                    alt="Profile"
+                >
+
+                <div>
+
+                    <strong id="homeUsername">
+                        User
+                    </strong>
+
+                    <span id="homeUserName">
+                        User
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUGGESTIONS -->
+
+            <div class="suggestion-heading">
+
+                <strong>
+                    Suggestions for you
+                </strong>
+
+                <button
+                    id="seeAllBtn"
+                    class="see-all-btn"
+                >
+                    See All
+                </button>
+
+            </div>
+
+
+            <div
+                id="suggestionsList"
+                class="suggestions-list"
+            ></div>
+
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section
+    id="searchPage"
+    class="page"
+    style="display:none;"
+>
+
+    <div class="page-header">
+
+        <h2>
+            Search
+        </h2>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <span class="material-symbols-outlined">
+            search
+        </span>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+        >
+
+    </div>
+
+
+    <div
+        id="searchResults"
+        class="search-results"
+    ></div>
+
+</section>
+
+
+<!-- ================= EXPLORE ================= -->
+
+<section
+    id="explorePage"
+    class="page"
+    style="display:none;"
+>
+
+    <div class="page-header">
+
+        <h2>
+            Explore
+        </h2>
+
+    </div>
+
+
+    <div
+        id="explorePosts"
+        class="explore-grid"
+    ></div>
+
+</section>
+
+
+<!-- ================= REELS ================= -->
+
+<section
+    id="reelsPage"
+    class="page"
+    style="display:none;"
+>
+
+    <div class="page-header">
+
+        <h2>
+            Reels
+        </h2>
+
+    </div>
+
+
+    <div
+        id="reelsContainer"
+        class="reels-container"
+    >
+
+        <p class="empty">
+            No reels available.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MESSAGES ================= -->
+
+<section
+    id="messagesPage"
+    class="page messages-page"
+    style="display:none;"
+>
+
+    <div class="messages-layout">
+
+
+        <div class="conversation-panel">
+
+            <div class="messages-title">
+
+                <h2>
+                    Messages
+                </h2>
+
+            </div>
+
+
+            <div class="message-search">
+
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+
+                <input
+                    type="text"
+                    id="messageSearch"
+                    placeholder="Search"
+                >
+
+            </div>
+
+
+            <div
+                id="conversationList"
+                class="conversation-list"
+            ></div>
+
+        </div>
+
+
+        <div class="chat-panel">
+
+
+            <div
+                id="chatEmpty"
+                class="chat-empty"
+            >
+
+                <span class="material-symbols-outlined">
+                    chat
+                </span>
+
+                <h3>
+                    Your messages
+                </h3>
+
+                <p>
+                    Select a user to start chatting.
+                </p>
+
+            </div>
+
+
+            <div
+                id="chatBox"
+                class="chat-box"
+                style="display:none;"
+            >
+
+                <div
+                    id="chatHeader"
+                    class="chat-header"
+                ></div>
+
+
+                <div
+                    id="messagesContainer"
+                    class="messages-container"
+                ></div>
+
+
+                <div class="message-input-row">
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Message..."
+                    >
+
+                    <button id="sendMessageBtn">
+                        Send
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTIFICATIONS ================= -->
+
+<section
+    id="notificationsPage"
+    class="page"
+    style="display:none;"
+>
+
+    <div class="page-header notification-header">
+
+        <div class="notification-title">
+
+            <span class="material-symbols-outlined">
+                favorite
+            </span>
+
+            <h2>
+                Notifications
+            </h2>
+
+        </div>
+
+
+        <button
+            onclick="markAllNotificationsRead()"
+            class="small-btn"
+        >
+            Mark all as read
+        </button>
+
+    </div>
+
+
+    <div
+        id="notificationsList"
+        class="notifications-list"
+    ></div>
+
+</section>
+
+
+<!-- ================= CREATE ================= -->
+
+<section
+    id="createPage"
+    class="page"
+    style="display:none;"
+>
+
+    <div class="create-container">
+
+        <div class="page-header">
+
+            <div class="create-title">
+
+                <span class="material-symbols-outlined">
+                    add_box
+                </span>
+
+                <h2>
+                    Create new post
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="createPostForm"
+            class="create-form"
+        >
+
+            <label>
+                Image URL
+            </label>
+
+            <input
+                type="url"
+                id="postImage"
+                placeholder="Paste image URL"
+                required
+            >
+
+
+            <label>
+                Caption
+            </label>
+
+            <textarea
+                id="postCaption"
+                placeholder="Write a caption..."
+                rows="5"
+            ></textarea>
+
+
+            <button
+                type="submit"
+                id="createPostBtn"
+            >
+                Share
+            </button>
+
+
+            <p
+                id="createPostMessage"
+                class="message"
+            ></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROFILE ================= -->
+
+<section
+    id="profilePage"
+    class="page"
+    style="display:none;"
+>
+
+    <div class="profile-container">
+
+
+        <div class="profile-header">
+
+
+            <div class="profile-image-box">
+
+                <img
+                    id="profileImage"
+                    src=""
+                    alt="Profile"
+                >
+
+            </div>
+
+
+            <div class="profile-details">
+
+
+                <div class="profile-top">
+
+                    <h2 id="profileUsername">
+                        username
+                    </h2>
+
+
+                    <button
+                        id="editProfileBtn"
+                        class="edit-profile-btn"
+                    >
+                        Edit profile
+                    </button>
+
+                </div>
+
+
+                <div class="profile-stats">
+
+                    <span>
+                        <strong id="postCount">
+                            0
+                        </strong>
+                        posts
+                    </span>
+
+                    <span>
+                        <strong id="followersCount">
+                            0
+                        </strong>
+                        followers
+                    </span>
+
+                    <span>
+                        <strong id="followingCount">
+                            0
+                        </strong>
+                        following
+                    </span>
+
+                </div>
+
+
+                <h3 id="profileName"></h3>
+
+                <p id="profileBio"></p>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- EDIT PROFILE -->
+
+        <div
+            id="editProfileBox"
+            class="edit-profile-box"
+            style="display:none;"
+        >
+
+            <h3>
+                Edit profile
+            </h3>
+
+
+            <input
+                type="text"
+                id="editName"
+                placeholder="Name"
+            >
+
+
+            <input
+                type="text"
+                id="editUsername"
+                placeholder="Username"
+            >
+
+
+            <textarea
+                id="editBio"
+                placeholder="Bio"
+                rows="3"
+            ></textarea>
+
+
+            <input
+                type="text"
+                id="editProfilePic"
+                placeholder="Profile picture URL"
+            >
+
+
+            <input
+                type="text"
+                id="editPhone"
+                placeholder="Phone"
+            >
+
+
+            <div class="edit-buttons">
+
+                <button id="saveProfileBtn">
+                    Save
+                </button>
+
+                <button
+                    id="cancelEditBtn"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+
+            <p
+                id="profileMessage"
+                class="message"
+            ></p>
+
+        </div>
+
+
+        <!-- PROFILE TABS -->
+
+        <div class="profile-tabs">
+
+            <button class="profile-tab">
+
+                <span class="material-symbols-outlined">
+                    grid_on
+                </span>
+
+                POSTS
+
+            </button>
+
+
+            <button
+                class="profile-tab"
+                id="savedProfileTab"
+                data-page="saved"
+            >
+
+                <span class="material-symbols-outlined">
+                    bookmark_border
+                </span>
+
+                SAVED
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="profilePosts"
+            class="profile-posts"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SAVED ================= -->
+
+<section
+    id="savedPage"
+    class="page"
+    style="display:none;"
+>
+
+    <div class="page-header">
+
+        <div class="saved-title">
+
+            <span class="material-symbols-outlined">
+                bookmark
+            </span>
+
+            <h2>
+                Saved
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="savedPosts"
+        class="saved-posts"
+    ></div>
+
+</section>
+
+
+</main>
+
+</section>
+
+
+<!-- ================= POST MODAL ================= -->
+
+<div
+    id="postModal"
+    class="modal"
+    style="display:none;"
+>
+
+    <div class="modal-box">
+
+        <button
+            id="closePostModal"
+            class="close-modal"
+        >
+
+            <span class="material-symbols-outlined">
+                close
+            </span>
+
+        </button>
+
+
+        <div
+            id="modalPostContent"
+            class="modal-content"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= USER MODAL ================= -->
+
+<div
+    id="userModal"
+    class="modal"
+    style="display:none;"
+>
+
+    <div class="modal-box">
+
+        <button
+            id="closeUserModal"
+            class="close-modal"
+        >
+
+            <span class="material-symbols-outlined">
+                close
+            </span>
+
+        </button>
+
+
+        <div
+            id="userModalContent"
+            class="modal-content"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div
+    id="toast"
+    class="toast"
+    style="display:none;"
+>
+
+    <span id="toastMessage"></span>
+
+</div>
+
+
+<script src="script.js"></script>
+<!-- STORY VIEWER -->
+
+<div id="storyViewer" class="story-viewer">
+
+    <div class="story-viewer-content">
+
+        <button
+            class="story-close"
+            onclick="closeStoryViewer()"
+        >
+            ×
+        </button>
+
+        <img
+            id="storyViewerImage"
+            src=""
+            alt="Story"
+        >
+
+        <div
+            id="storyViewerUsername"
+            class="story-viewer-username"
+        ></div>
+
+        <div
+            id="storyViewerCaption"
+            class="story-viewer-caption"
+        ></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
